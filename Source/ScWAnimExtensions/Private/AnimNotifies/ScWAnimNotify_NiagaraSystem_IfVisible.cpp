@@ -6,6 +6,8 @@
 
 #include "NiagaraFunctionLibrary.h"
 
+#include UE_INLINE_GENERATED_CPP_BY_NAME(ScWAnimNotify_NiagaraSystem_IfVisible)
+
 UScWAnimNotify_NiagaraSystem_IfVisible::UScWAnimNotify_NiagaraSystem_IfVisible()
 {
 #if WITH_EDITORONLY_DATA
@@ -30,11 +32,11 @@ void UScWAnimNotify_NiagaraSystem_IfVisible::PostLoad() // UObject
 
 //~ Begin Editor
 #if WITH_EDITOR
-void UScWAnimNotify_NiagaraSystem_IfVisible::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) // UObject
+void UScWAnimNotify_NiagaraSystem_IfVisible::PostEditChangeProperty(FPropertyChangedEvent& InOutPropertyChangedEvent) // UObject
 {
-	Super::PostEditChangeProperty(PropertyChangedEvent);
+	Super::PostEditChangeProperty(InOutPropertyChangedEvent);
 
-	if (PropertyChangedEvent.MemberProperty && PropertyChangedEvent.MemberProperty->GetFName() == GET_MEMBER_NAME_CHECKED(ThisClass, RotationOffset))
+	if (InOutPropertyChangedEvent.MemberProperty && InOutPropertyChangedEvent.MemberProperty->GetFName() == GET_MEMBER_NAME_CHECKED(ThisClass, RotationOffset))
 	{
 		RotationOffsetQuat = FQuat(RotationOffset);
 	}
@@ -92,7 +94,7 @@ UFXSystemComponent* UScWAnimNotify_NiagaraSystem_IfVisible::GetSpawnedNiagaraSys
 	return SpawnedNiagaraSystem;
 }
 
-UFXSystemComponent* UScWAnimNotify_NiagaraSystem_IfVisible::SpawnNiagaraSystem(USkeletalMeshComponent* InMeshComponent, UAnimSequenceBase* InSequenceAnimationBase)
+UFXSystemComponent* UScWAnimNotify_NiagaraSystem_IfVisible::SpawnNiagaraSystem(USkeletalMeshComponent* InMeshComponent, UAnimSequenceBase* InAnimationSequenceBase)
 {
 	UFXSystemComponent* OutComponent = nullptr;
 

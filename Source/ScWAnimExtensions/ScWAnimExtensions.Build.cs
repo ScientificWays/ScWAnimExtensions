@@ -1,7 +1,6 @@
 // Scientific Ways
 
 using UnrealBuildTool;
-using System.IO; // for Path
 
 public class ScWAnimExtensions : ModuleRules
 {
@@ -17,7 +16,6 @@ public class ScWAnimExtensions : ModuleRules
 		PublicDependencyModuleNames.AddRange(new string[]
 		{
 			"Core",
-
 			"ScWGameCore",
 		});
 
@@ -25,7 +23,6 @@ public class ScWAnimExtensions : ModuleRules
 		{
 			"CoreUObject",
 			"Engine",
-
 			"Niagara",
 		});
 	}

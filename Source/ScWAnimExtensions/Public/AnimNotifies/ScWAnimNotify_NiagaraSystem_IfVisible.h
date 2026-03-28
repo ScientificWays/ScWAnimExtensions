@@ -11,7 +11,7 @@
 #define MODULE_API SCWANIMEXTENSIONS_API
 
 /**
- *	Same as UAnimNotify_PlayNiagaraEffect but checks if animated mesh rendered for its owner
+ *	Plays a Niagara system from an anim notify only when the owning mesh is currently rendered.
  */
 UCLASS(MinimalAPI, Const, HideCategories = "Object", CollapseCategories, Config = "Game", meta = (DisplayName = "Play Niagara Particle Effect (If visible)"))
 class UScWAnimNotify_NiagaraSystem_IfVisible : public UAnimNotify

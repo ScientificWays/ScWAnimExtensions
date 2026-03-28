@@ -11,7 +11,7 @@
 #define MODULE_API SCWANIMEXTENSIONS_API
 
 /**
- *	Same as UAnimNotify_PlaySound but checks if animated mesh rendered for its owner
+ *	Plays a sound from an anim notify only when the owning mesh is currently rendered.
  */
 UCLASS(MinimalAPI, Const, HideCategories = "Object", CollapseCategories, Config = "Game", meta = (DisplayName = "Play Sound (If visible)"))
 class UScWAnimNotify_PlaySound_IfVisible : public UAnimNotify
@@ -30,7 +30,7 @@ protected:
 //~ Begin Editor
 protected:
 #if WITH_EDITOR
-	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent) override; // UObject
+	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& InOutPropertyChangedEvent) override; // UObject
 	virtual void ValidateAssociatedAssets() override; // UAnimNotify
 #endif
 //~ End Editor
@@ -64,7 +64,7 @@ public:
 	uint32 bPreviewIgnoreAttenuation:1;
 #endif
 protected:
-	void SpawnSound(USkeletalMeshComponent* InMeshComponent, UAnimSequenceBase* InSequenceAnimationBase);
+	void SpawnSound(USkeletalMeshComponent* InMeshComponent, UAnimSequenceBase* InAnimationSequenceBase);
 //~ End Sound
 };
 

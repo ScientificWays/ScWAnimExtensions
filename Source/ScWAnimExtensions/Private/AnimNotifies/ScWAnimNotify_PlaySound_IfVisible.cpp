@@ -4,8 +4,9 @@
 
 #include "Utils/ScWUtilsFunctionLibrary.h"
 
-#include "NiagaraSystem.h"
 #include "Misc/UObjectToken.h"
+
+#include UE_INLINE_GENERATED_CPP_BY_NAME(ScWAnimNotify_PlaySound_IfVisible)
 
 UScWAnimNotify_PlaySound_IfVisible::UScWAnimNotify_PlaySound_IfVisible()
 {
@@ -28,8 +29,6 @@ UScWAnimNotify_PlaySound_IfVisible::UScWAnimNotify_PlaySound_IfVisible()
 void UScWAnimNotify_PlaySound_IfVisible::PostLoad() // UObject
 {
 	Super::PostLoad();
-
-	
 }
 //~ End Initialize
 
@@ -38,8 +37,6 @@ void UScWAnimNotify_PlaySound_IfVisible::PostLoad() // UObject
 void UScWAnimNotify_PlaySound_IfVisible::PostEditChangeProperty(FPropertyChangedEvent& InOutPropertyChangedEvent) // UObject
 {
 	Super::PostEditChangeProperty(InOutPropertyChangedEvent);
-
-	
 }
 
 void UScWAnimNotify_PlaySound_IfVisible::ValidateAssociatedAssets() // UAnimNotify
